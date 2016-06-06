@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:decorate template="/template/template.xhtml">
+        <ui:define name="content">
+
+            <h:form id="formCadastrar">
+
+                <p:outputPanel styleClass="row">
+
+                    <p:outputPanel styleClass="col-md-2 form-group">
+                        <p:outputLabel for="marca" value="Marca:" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="col-md-4">
+                        <p:inputText id="marca" value="#{cadastrarCarroBean.novo.marca}" styleClass="form-control" />
+                    </p:outputPanel>
+
+                </p:outputPanel>
+
+                <p:outputPanel styleClass="row">
+
+                    <p:outputPanel styleClass="col-md-2 form-group">
+                        <p:outputLabel for="modelo" value="Modelo:" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="col-md-4">
+                        <p:inputText id="modelo" value="#{cadastrarCarroBean.novo.modelo}" styleClass="form-control" />
+                    </p:outputPanel>
+
+                </p:outputPanel>
+
+                <p:outputPanel styleClass="row">
+
+                    <p:outputPanel styleClass="col-md-2 form-group">
+                        <p:outputLabel for="ano" value="Ano:" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="col-md-4">
+                        <p:inputText type="number" id="ano" value="#{cadastrarCarroBean.novo.ano}" styleClass="form-control">
+                            <f:validateDoubleRange minimum="1990" maximum="#{cadastrarCarroBean.anoAtual}" />
+                        </p:inputText>
+                    </p:outputPanel>
+
+                </p:outputPanel>
+
+                <p:outputPanel styleClass="row">
+
+                    <p:outputPanel styleClass="col-md-2 form-group">
+                        <p:outputLabel for="quilometragem" value="Quilometragem:" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="col-md-4">
+                        <p:inputText type="number" id="quilometragem" value="#{cadastrarCarroBean.novo.quilometragem}" styleClass="form-control">
+                            <f:validateDoubleRange minimum="0" />
+                        </p:inputText>
+                    </p:outputPanel>
+
+                </p:outputPanel>
+
+                <p:outputPanel styleClass="row">
+
+                    <p:outputPanel styleClass="col-md-2 form-group">
+                        <p:outputLabel for="preco" value="Preço Aluguel" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="col-md-4">
+                        <p:inputText type="number" id="preco" value="#{cadastrarCarroBean.novo.precoAluguel}" styleClass="form-control">
+                            <f:convertNumber maxFractionDigits="2" minFractionDigits="2" type="number"  />
+                        </p:inputText>
+                    </p:outputPanel>
+
+                </p:outputPanel>
+                
+                <p:outputPanel styleClass="row">
+                    <p:outputPanel styleClass="col-md-3 text-right">
+                        <p:commandButton styleClass="btn btn-primary" value="Cadastrar" action="#{cadastrarCarroBean.adicionarCarro()}" />
+                    </p:outputPanel>
+                    <p:outputPanel styleClass="col-md-3 text-left">
+                        <p:commandButton styleClass="btn btn-warning" value="Cancelar" action="#{cadastrarCarroBean.cancelar()}" />
+                    </p:outputPanel>
+                </p:outputPanel>
+                
+            </h:form>
+        </ui:define>
+    </ui:decorate>
+</html>
