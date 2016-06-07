@@ -6,49 +6,64 @@
 package br.edu.ifpe.recife.locavrum.controller;
 
 import br.edu.ifpe.recife.locavrum.model.Carro;
+import br.edu.ifpe.recife.locavrum.datamodel.CarroDataModel;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Eduardo
  */
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class CarroControllerBean extends BasicBean {
 
-    private List<Carro> carros;
+    private List<Carro> carros = new ArrayList<Carro>();
+    private CarroDataModel carrosSelecionados = new CarroDataModel();
     private Carro carro;
-//    private int anoAtual;
+    private int anoAtual;
 
     public CarroControllerBean() {
+        
+        for(int i = 0; i < 5; i++){
+            Carro c = new Carro();
+            
+            c.setModelo("Teste" + i);
+            c.setMarca("Marca" + i);
+            c.setQuilometragem(123444444+i);
+            c.setAno(2000+i);
+            c.setPrecoAluguel(200 + (i*5));
+            carros.add(c);
+            
+        }
+        
         Date dataAtual = new Date();
         carro = new Carro();
-//        anoAtual = dataAtual.getYear();
-
+        anoAtual = dataAtual.getYear();
     }
 
-    public void cadastrarCarro(Carro carro) {
+    public void cadastrarCarro() {
 
         //Redirecionamento
-//        return "/view/index.xhtml";
+//      return "/view/index.xhtml";
     }
 
-    public void alterarCarro(Carro carro) {
-//        return "";
+    public void alterarCarro() {
+
     }
 
-    public void removerCarro(Carro carro) {
-//        return "";
+    public void removerCarro() {
+
     }
 
     public List<Carro> listarCarros() {
         return carros;
     }
 
-    public void emprestarCarro(Carro carro) {
+    public void emprestarCarro() {
 
     }
 
@@ -60,11 +75,28 @@ public class CarroControllerBean extends BasicBean {
         this.carro = carro;
     }
 
-//    public int getAnoAtual() {
-//        return anoAtual;
-//    }
-//
-//    public void setAnoAtual(int anoAtual) {
-//        this.anoAtual = anoAtual;
-//    }
+    public int getAnoAtual() {
+        return anoAtual;
+    }
+
+    public void setAnoAtual(int anoAtual) {
+        this.anoAtual = anoAtual;
+    }
+
+    public List<Carro> getCarros() {
+        return carros;
+    }
+
+    public void setCarros(List<Carro> carros) {
+        this.carros = carros;
+    }
+
+    public CarroDataModel getCarrosSelecionados() {
+        return carrosSelecionados;
+    }
+
+    public void setCarrosSelecionados(CarroDataModel carrosSelecionados) {
+        this.carrosSelecionados = carrosSelecionados;
+    }
+    
 }
