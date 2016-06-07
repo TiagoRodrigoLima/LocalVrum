@@ -16,7 +16,7 @@
                         <p:outputLabel for="marca" value="Marca:" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-4">
-                        <p:inputText id="marca" value="#{cadastrarCarroBean.novo.marca}" styleClass="form-control" />
+                        <p:inputText id="marca" value="#{carroControllerBean.novo.marca}" styleClass="form-control" />
                     </p:outputPanel>
 
                 </p:outputPanel>
@@ -27,7 +27,7 @@
                         <p:outputLabel for="modelo" value="Modelo:" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-4">
-                        <p:inputText id="modelo" value="#{cadastrarCarroBean.novo.modelo}" styleClass="form-control" />
+                        <p:inputText id="modelo" value="#{carroControllerBean.novo.modelo}" styleClass="form-control" />
                     </p:outputPanel>
 
                 </p:outputPanel>
@@ -38,8 +38,8 @@
                         <p:outputLabel for="ano" value="Ano:" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-4">
-                        <p:inputText type="number" id="ano" value="#{cadastrarCarroBean.novo.ano}" styleClass="form-control">
-                            <f:validateDoubleRange minimum="1990" maximum="#{cadastrarCarroBean.anoAtual}" />
+                        <p:inputText type="number" id="ano" value="#{carroControllerBean.novo.ano}" styleClass="form-control">
+                            <f:validateDoubleRange minimum="1990" maximum="#{carroControllerBean.anoAtual}" />
                         </p:inputText>
                     </p:outputPanel>
 
@@ -51,7 +51,7 @@
                         <p:outputLabel for="quilometragem" value="Quilometragem:" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-4">
-                        <p:inputText type="number" id="quilometragem" value="#{cadastrarCarroBean.novo.quilometragem}" styleClass="form-control">
+                        <p:inputText type="number" id="quilometragem" value="#{carroControllerBean.novo.quilometragem}" styleClass="form-control">
                             <f:validateDoubleRange minimum="0" />
                         </p:inputText>
                     </p:outputPanel>
@@ -64,7 +64,7 @@
                         <p:outputLabel for="preco" value="Preço Aluguel" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-4">
-                        <p:inputText type="number" id="preco" value="#{cadastrarCarroBean.novo.precoAluguel}" styleClass="form-control">
+                        <p:inputText type="number" id="preco" value="#{carroControllerBean.novo.precoAluguel}" styleClass="form-control">
                             <f:convertNumber maxFractionDigits="2" minFractionDigits="2" type="number"  />
                         </p:inputText>
                     </p:outputPanel>
@@ -73,10 +73,10 @@
                 
                 <p:outputPanel styleClass="row">
                     <p:outputPanel styleClass="col-md-3 text-right">
-                        <p:commandButton styleClass="btn btn-primary" value="Cadastrar" action="#{cadastrarCarroBean.adicionarCarro()}" />
+                        <p:commandButton styleClass="btn btn-primary" value="Cadastrar" action="#{carroControllerBean.adicionarCarro()}" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-3 text-left">
-                        <p:commandButton styleClass="btn btn-warning" value="Cancelar" action="#{cadastrarCarroBean.cancelar()}" />
+                        <p:commandButton styleClass="btn btn-warning" value="Cancelar" action="#{carroControllerBean.cancelar()}" />
                     </p:outputPanel>
                 </p:outputPanel>
                 
