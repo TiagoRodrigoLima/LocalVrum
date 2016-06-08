@@ -32,6 +32,7 @@ public class Carro {
     private double precoAluguel;
     @Temporal(TemporalType.DATE)
     private Date anoFabricacao;
+    private List<Carro> carros;
     
     public Carro() {
     }
