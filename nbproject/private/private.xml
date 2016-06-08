@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/web/WEB-INF/web.xml</file>
-            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/web/index.xhtml</file>
-            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/web/welcomePrimefaces.xhtml</file>
+            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/src/java/br/edu/ifpe/recife/locavrum/controller/CarroControllerBean.java</file>
+            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/web/view/index.xhtml</file>
+            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/web/template/template.xhtml</file>
+            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/src/java/br/edu/ifpe/recife/locavrum/model/Carro.java</file>
+            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/web/view/cadastrar-carro.xhtml</file>
+            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/web/view/alugar-carro.xhtml</file>
         </group>
     </open-files>
 </project-private>

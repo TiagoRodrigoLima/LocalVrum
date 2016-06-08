@@ -6,7 +6,6 @@
 package br.edu.ifpe.recife.locavrum.controller;
 
 import br.edu.ifpe.recife.locavrum.model.Carro;
-import br.edu.ifpe.recife.locavrum.datamodel.CarroDataModel;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +21,7 @@ import javax.faces.bean.ViewScoped;
 public class CarroControllerBean extends BasicBean {
 
     private List<Carro> carros = new ArrayList<Carro>();
-    private CarroDataModel carrosSelecionados = new CarroDataModel();
+    private List<Carro>  carrosSelecionados = new ArrayList<Carro>();
     private Carro carro;
     private int anoAtual;
 
@@ -30,7 +29,7 @@ public class CarroControllerBean extends BasicBean {
         
         for(int i = 0; i < 5; i++){
             Carro c = new Carro();
-            
+            c.setId(new Long(i));
             c.setModelo("Teste" + i);
             c.setMarca("Marca" + i);
             c.setQuilometragem(123444444+i);
@@ -91,12 +90,12 @@ public class CarroControllerBean extends BasicBean {
         this.carros = carros;
     }
 
-    public CarroDataModel getCarrosSelecionados() {
+    public List<Carro> getCarrosSelecionados() {
         return carrosSelecionados;
     }
 
-    public void setCarrosSelecionados(CarroDataModel carrosSelecionados) {
+    public void setCarrosSelecionados(List<Carro> carrosSelecionados) {
         this.carrosSelecionados = carrosSelecionados;
     }
-    
+
 }

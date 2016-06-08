@@ -13,13 +13,13 @@
                 <p:outputPanel styleClass="row">
                     <p:outputPanel styleClass="col-md-9">
                         <p:dataTable id="tabelaCarrosAluguel" value="#{carroControllerBean.carros}" emptyMessage="Não há registros." paginator="true" rowsPerPageTemplate="10"
-                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                                      var="carro" selection="#{carroControllerBean.carrosSelecionados}" rowKey="#{carro.id}">
-                            
+
                             <p:column headerText="" selectionMode="multiple">
-                                
+
                             </p:column>
-                            
+
                             <p:column headerText="Marca" filterBy="#{carro.marca}">
                                 #{carro.marca}
                             </p:column>
@@ -37,6 +37,12 @@
                             </p:column>
                         </p:dataTable>
                     </p:outputPanel>
+                </p:outputPanel>
+
+                <p:outputPanel styleClass="row">
+                    <p:outputPanel styleClass="col-md-12 text-right">
+                        <p:commandLink id="btn-selecionar" class="btn-success btn-block btn" action="#{carroControllerBean.alterarCarro()}" />
+                    </p:outputPanel>    
                 </p:outputPanel>
 
             </h:form>
