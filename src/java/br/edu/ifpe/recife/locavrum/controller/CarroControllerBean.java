@@ -6,24 +6,28 @@
 package br.edu.ifpe.recife.locavrum.controller;
 
 import br.edu.ifpe.recife.locavrum.model.Carro;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
  * @author Eduardo
  */
 @ManagedBean
-@ViewScoped
+@SessionScoped
 public class CarroControllerBean extends BasicBean {
 
     private List<Carro> carros = new ArrayList<Carro>();
     private List<Carro>  carrosSelecionados = new ArrayList<Carro>();
     private Carro carro;
-    private int anoAtual;
 
     public CarroControllerBean() {
         
@@ -39,15 +43,19 @@ public class CarroControllerBean extends BasicBean {
             
         }
         
-        Date dataAtual = new Date();
         carro = new Carro();
-        anoAtual = dataAtual.getYear();
+        
     }
 
     public void cadastrarCarro() {
 
-        //Redirecionamento
-//      return "/view/index.xhtml";
+        System.out.println("br.edu.ifpe.recife.locavrum.controller.CarroControllerBean.cadastrarCarro()");
+        
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+        } catch (IOException ex) {
+            Logger.getLogger(CarroControllerBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void alterarCarro() {
@@ -73,15 +81,7 @@ public class CarroControllerBean extends BasicBean {
     public void setCarro(Carro carro) {
         this.carro = carro;
     }
-
-    public int getAnoAtual() {
-        return anoAtual;
-    }
-
-    public void setAnoAtual(int anoAtual) {
-        this.anoAtual = anoAtual;
-    }
-
+    
     public List<Carro> getCarros() {
         return carros;
     }

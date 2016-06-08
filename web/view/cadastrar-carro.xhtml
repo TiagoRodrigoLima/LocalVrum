@@ -8,7 +8,7 @@
     <ui:decorate template="/template/template.xhtml">
         <ui:define name="content">
 
-            <h:form id="formCadastrar">
+            <h:form>
 
                 <p:outputPanel styleClass="row">
 
@@ -38,8 +38,7 @@
                         <p:outputLabel for="ano" value="Ano:" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-4">
-                        <p:inputText type="number" id="ano" value="#{carroControllerBean.carro.ano}" styleClass="form-control">
-                            <f:validateDoubleRange minimum="1990" maximum="#{carroControllerBean.anoAtual}" />
+                        <p:inputText type="number" id="ano" value="#{carroControllerBean.carro.ano}" styleClass="form-control" >
                         </p:inputText>
                     </p:outputPanel>
 
@@ -65,7 +64,6 @@
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-4">
                         <p:inputText type="number" id="preco" value="#{carroControllerBean.carro.precoAluguel}" styleClass="form-control">
-                            <f:convertNumber maxFractionDigits="2" minFractionDigits="2" type="number"  />
                         </p:inputText>
                     </p:outputPanel>
 
@@ -73,10 +71,10 @@
                 
                 <p:outputPanel styleClass="row">
                     <p:outputPanel styleClass="col-md-3 text-right">
-                        <p:commandLink styleClass="btn btn-primary" value="Cadastrar" action="#{carroControllerBean.adicionarCarro()}" />
+                        <p:commandButton styleClass="btn btn-primary" value="Cadastrar" actionListener="#{carroControllerBean.cadastrarCarro}" />
                     </p:outputPanel>
                     <p:outputPanel styleClass="col-md-3 text-left">
-                        <p:commandLink styleClass="btn btn-warning" value="Cancelar" action="#{carroControllerBean.cancelar()}" />
+                        <p:commandButton styleClass="btn btn-warning" value="Cancelar" action="#{carroControllerBean.cancelar}" />
                     </p:outputPanel>
                 </p:outputPanel>
                 

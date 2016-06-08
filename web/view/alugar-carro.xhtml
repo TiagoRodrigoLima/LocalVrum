@@ -11,7 +11,7 @@
             <h:form id="formAlguar">
 
                 <p:outputPanel styleClass="row">
-                    <p:outputPanel styleClass="col-md-9">
+                    <p:outputPanel styleClass="col-md-9 form-group">
                         <p:dataTable id="tabelaCarrosAluguel" value="#{carroControllerBean.carros}" emptyMessage="Não há registros." paginator="true" rowsPerPageTemplate="10"
                                      paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
                                      var="carro" selection="#{carroControllerBean.carrosSelecionados}" rowKey="#{carro.id}">
@@ -40,8 +40,8 @@
                 </p:outputPanel>
 
                 <p:outputPanel styleClass="row">
-                    <p:outputPanel styleClass="col-md-12 text-right">
-                        <p:commandLink id="btn-selecionar" class="btn-success btn-block btn" action="#{carroControllerBean.alterarCarro()}" />
+                    <p:outputPanel styleClass="col-md-4 text-right form-group">
+                        <p:commandLink id="btn-selecionar" class="btn-success btn-block btn" action="#{carroControllerBean.alterarCarro()}" value="Prosseguir" />
                     </p:outputPanel>    
                 </p:outputPanel>
 
