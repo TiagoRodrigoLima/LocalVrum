@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:decorate template="/template/template.xhtml">
+        <ui:define name="content">
+
+            <h:form id="formAlguar">
+
+                <p:outputPanel styleClass="row">
+                    <p:outputPanel styleClass="col-md-9 form-group">
+                        <p:dataTable id="tabelaCarrosAluguel" value="#{carroControllerBean.carros}" emptyMessage="Não há registros." paginator="true" rowsPerPageTemplate="10"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                     var="carro" selection="#{carroControllerBean.carrosSelecionados}" rowKey="#{carro.id}">
+
+                            <p:column headerText="" selectionMode="multiple">
+
+                            </p:column>
+
+                            <p:column headerText="Marca" filterBy="#{carro.marca}">
+                                #{carro.marca}
+                            </p:column>
+                            <p:column headerText="Modelo" filterBy="#{carro.modelo}">
+                                #{carro.modelo}
+                            </p:column>
+                            <p:column headerText="Ano" filterBy="#{carro.ano}">
+                                #{carro.ano}
+                            </p:column>
+                            <p:column headerText="Quilometragem">
+                                #{carro.quilometragem}
+                            </p:column>
+                            <p:column headerText="Preço (Diária)">
+                                #{carro.precoAluguel}
+                            </p:column>
+                        </p:dataTable>
+                    </p:outputPanel>
+                </p:outputPanel>
+
+                <p:outputPanel styleClass="row">
+                    <p:outputPanel styleClass="col-md-4 text-right form-group">
+                        <p:commandLink id="btn-selecionar" class="btn-success btn-block btn" action="#{carroControllerBean.alterarCarro()}" value="Prosseguir" />
+                    </p:outputPanel>    
+                </p:outputPanel>
+
+            </h:form>
+
+        </ui:define>
+    </ui:decorate>
+</html>
