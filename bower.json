@@ -1,0 +1,25 @@
+{
+  "name": "LocaVrum",
+  "homepage": "https://github.com/TiagoRodrigoLima/LocalVrum",
+  "authors": [
+    "tiago <tiagorodrigodelima@hotmail.com>"
+  ],
+  "description": "Sistema de Aluguel de Veículos",
+  "main": "",
+  "keywords": [
+    "Aluguel",
+    "Carros"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
