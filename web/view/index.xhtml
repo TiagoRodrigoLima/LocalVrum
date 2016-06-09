@@ -4,10 +4,55 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-    
+
     <ui:decorate template="/template/template.xhtml">
         <ui:define name="content">
-            Hello World
+
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <p:commandButton value="Cadastrar Novo" action="cadastrar-carro.xhtml" />
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 15px">
+                <div class="col-md-9 form-group">
+                    <p:dataTable id="tabelaCarrosAluguel" value="#{carroControllerBean.carros}" emptyMessage="Não há registros." paginator="true" rowsPerPageTemplate="10"
+                                 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                 var="carro" selection="#{carroControllerBean.carro}" rowKey="#{carro.id}">
+
+                        <p:column headerText="Marca" filterBy="#{carro.marca}">
+                            #{carro.marca}
+                        </p:column>
+                        <p:column headerText="Modelo" filterBy="#{carro.modelo}">
+                            #{carro.modelo}
+                        </p:column>
+                        <p:column headerText="Ano" filterBy="#{carro.ano}">
+                            #{carro.ano}
+                        </p:column>
+                        <p:column headerText="Quilometragem">
+                            #{carro.quilometragem}
+                        </p:column>
+                        <p:column headerText="Preço (Diária)">
+                            #{carro.precoAluguel}
+                        </p:column>
+                        <p:column>
+                            <p:commandLink action="#{carroControllerBean.alterarCarro()}">
+                                Editar
+                            </p:commandLink>
+                        </p:column>
+                        <p:column>
+                            <p:commandLink actionListener="#{carroControllerBean.removerCarro(carro)}"> Excluir
+                                <p:confirm header="Confirmação" message="Você tem certeza que deseja excluir esse registro?" icon="ui-icon-alert" />
+                            </p:commandLink>
+                            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                                <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                                <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                            </p:confirmDialog>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+            </div>
+
         </ui:define>
     </ui:decorate>
 </html>

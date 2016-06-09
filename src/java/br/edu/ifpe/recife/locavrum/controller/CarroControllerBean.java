@@ -62,7 +62,7 @@ public class CarroControllerBean extends BasicBean {
 
     }
 
-    public void removerCarro() {
+    public void removerCarro(Carro carro) {
 
     }
 
