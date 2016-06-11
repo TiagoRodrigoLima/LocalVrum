@@ -5,16 +5,16 @@
  */
 package br.edu.ifpe.recife.locavrum.controller;
 
+import br.edu.ifpe.recife.locavrum.padroes.CarroMemento;
 import br.edu.ifpe.recife.locavrum.model.Carro;
+import br.edu.ifpe.recife.locavrum.padroes.RelatorioVendas;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 /**
@@ -28,6 +28,7 @@ public class CarroControllerBean extends BasicBean {
     private List<Carro> carros = new ArrayList<Carro>();
     private List<Carro>  carrosSelecionados = new ArrayList<Carro>();
     private Carro carro;
+    private static final RelatorioVendas relatorio = RelatorioVendas.getLog();
 
     public CarroControllerBean() {
         
@@ -59,13 +60,32 @@ public class CarroControllerBean extends BasicBean {
     }
 
     public void alterarCarro() {
-
+        initAlterarCarro();
     }
 
+    private void initAlterarCarro(){
+        
+        if(carro != null){
+            CarroMemento estado = new CarroMemento(carro);
+            carro.getHistorico().adicionarMemento(estado);
+        }
+        
+    }
+    
+    public void reverterAlteracoes(){
+        
+        carro = carro.getHistorico().getUltimoEstado().getEstadoCarro();
+        
+    }
+    
     public void removerCarro(Carro carro) {
 
     }
 
+    public void alugarCarro(){
+        relatorio.adcionarVenda(carro.getPrecoAluguel());
+    }
+    
     public List<Carro> listarCarros() {
         return carros;
     }

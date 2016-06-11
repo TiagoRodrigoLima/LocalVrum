@@ -5,8 +5,9 @@
  */
 package br.edu.ifpe.recife.locavrum.model;
 
+import br.edu.ifpe.recife.locavrum.padroes.CarroCareTaker;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "Carros")
-public class Carro {
+public class Carro implements Serializable {
 
     @Id
     @GeneratedValue
@@ -30,11 +31,13 @@ public class Carro {
     private int ano;
     private long quilometragem;
     private double precoAluguel;
+    private boolean alugado;
     @Temporal(TemporalType.DATE)
     private Date anoFabricacao;
-    private List<Carro> carros;
+    private CarroCareTaker historico;
     
     public Carro() {
+        historico = new CarroCareTaker();
     }
 
     public Long getId() {
@@ -93,4 +96,16 @@ public class Carro {
         this.anoFabricacao = anoFabricacao;
     }
 
+    public CarroCareTaker getHistorico() {
+        return historico;
+    }
+
+    public boolean isAlugado() {
+        return alugado;
+    }
+
+    public void setAlugado(boolean alugado) {
+        this.alugado = alugado;
+    }
+    
 }
