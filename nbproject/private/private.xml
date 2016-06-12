@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/src/java/br/edu/ifpe/recife/locavrum/padroes/CarroMemento.java</file>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/src/java/br/edu/ifpe/recife/locavrum/controller/CarroControllerBean.java</file>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/src/java/br/edu/ifpe/recife/locavrum/padroes/RelatorioVendas.java</file>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/web/view/index.xhtml</file>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/src/java/br/edu/ifpe/recife/locavrum/model/Carro.java</file>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/src/java/br/edu/ifpe/recife/locavrum/padroes/CarroCareTaker.java</file>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/web/view/cadastrar-carro.xhtml</file>
-            <file>file:/B:/Documentos/NetBeansProjects/LocalVrum/web/view/editar-carro.xhtml</file>
+            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/src/java/br/edu/ifpe/recife/locavrum/padroes/singleton/RelatorioVendas.java</file>
+            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/src/java/br/edu/ifpe/recife/locavrum/padroes/memento/CarroCareTaker.java</file>
+            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/src/java/br/edu/ifpe/recife/locavrum/padroes/memento/CarroMemento.java</file>
+            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/web/META-INF/hibernate.cfg.xml</file>
+            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/web/META-INF/persistence.xml</file>
+            <file>file:/home/tiago/Projetos/NetBeansProjects/LocaVrum/src/java/br/edu/ifpe/recife/locavrum/jpa/GeraCarros.java</file>
         </group>
     </open-files>
 </project-private>

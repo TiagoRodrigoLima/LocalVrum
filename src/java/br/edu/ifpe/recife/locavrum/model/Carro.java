@@ -5,8 +5,9 @@
  */
 package br.edu.ifpe.recife.locavrum.model;
 
-import br.edu.ifpe.recife.locavrum.padroes.CarroCareTaker;
+import br.edu.ifpe.recife.locavrum.padroes.memento.CarroCareTaker;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -103,7 +104,7 @@ public class Carro implements Serializable {
     public boolean isAlugado() {
         return alugado;
     }
-
+    
     public void setAlugado(boolean alugado) {
         this.alugado = alugado;
     }

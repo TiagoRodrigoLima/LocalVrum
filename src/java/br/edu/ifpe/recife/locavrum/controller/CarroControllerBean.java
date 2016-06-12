@@ -5,9 +5,9 @@
  */
 package br.edu.ifpe.recife.locavrum.controller;
 
-import br.edu.ifpe.recife.locavrum.padroes.CarroMemento;
+import br.edu.ifpe.recife.locavrum.padroes.memento.CarroMemento;
 import br.edu.ifpe.recife.locavrum.model.Carro;
-import br.edu.ifpe.recife.locavrum.padroes.RelatorioVendas;
+import br.edu.ifpe.recife.locavrum.padroes.singleton.RelatorioVendas;
 import com.mchange.v2.beans.BeansUtils;
 import java.io.IOException;
 import java.util.ArrayList;
