@@ -8,8 +8,8 @@
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>IFPE - Carros</title>
-        <link rel="stylesheet" href="../css/bootstrap.min.css" />
-        <link type="text/stylesheet" href="../css/default.css" />
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/default.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
         <p:layout fullPage="true">
@@ -25,9 +25,9 @@
             <p:layoutUnit position="west" size="202">
                 <p:menu>
                     <p:submenu label="Menu">
+                        <p:menuitem value="Gerenciar Carros" url="/view/index.xhtml" />
                         <p:menuitem value="Cadastrar Carro" url="/view/cadastrar-carro.xhtml" />
                         <p:menuitem value="Alugar Carro" url="/view/alugar-carro.xhtml" />
-                        <p:menuitem value="Gerenciar Carros" url="" />
                         <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
                     </p:submenu>
                 </p:menu>

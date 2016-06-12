@@ -28,7 +28,7 @@ public class CarroControllerBean extends BasicBean {
     private List<Carro> carros = new ArrayList<Carro>();
     private List<Carro>  carrosSelecionados = new ArrayList<Carro>();
     private Carro carro;
-    private static final RelatorioVendas relatorio = RelatorioVendas.getLog();
+    private RelatorioVendas relatorio = RelatorioVendas.getLog();
 
     public CarroControllerBean() {
         
@@ -118,4 +118,10 @@ public class CarroControllerBean extends BasicBean {
         this.carrosSelecionados = carrosSelecionados;
     }
 
+    public RelatorioVendas getRelatorio() {
+        return relatorio;
+    }
+    
+    
+    
 }

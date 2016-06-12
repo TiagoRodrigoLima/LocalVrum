@@ -37,6 +37,11 @@
                     </div>
                 </div>
                 
+                <p:outputPanel>
+                    <p:commandLink action="#{carroControllerBean.alterarCarro()}" value="Salvar" />
+                    <p:commandLink action="#{carroControllerBean.reverterAlteracoes()}" value="Reverter Alterações" />
+                </p:outputPanel>
+                
             </h:form>
             
         </ui:define>
