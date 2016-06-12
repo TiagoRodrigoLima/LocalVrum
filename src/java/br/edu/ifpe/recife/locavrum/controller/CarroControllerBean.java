@@ -53,14 +53,25 @@ public class CarroControllerBean extends BasicBean {
         System.out.println("br.edu.ifpe.recife.locavrum.controller.CarroControllerBean.cadastrarCarro()");
         
         try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/LocaVrum/view/index.xhtml");
         } catch (IOException ex) {
             Logger.getLogger(CarroControllerBean.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void alterarCarro() {
+    public void redirecionarEditar(Carro carroSelecionado){
+        this.carro = carroSelecionado;
         initAlterarCarro();
+        
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/LocaVrum/view/editar-carro.xhtml");
+        } catch (IOException ex) {
+            Logger.getLogger(CarroControllerBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void alterarCarro() {
+        
     }
 
     private void initAlterarCarro(){
@@ -121,7 +132,5 @@ public class CarroControllerBean extends BasicBean {
     public RelatorioVendas getRelatorio() {
         return relatorio;
     }
-    
-    
     
 }

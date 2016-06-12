@@ -7,43 +7,47 @@
 
     <ui:decorate template="/template/template.xhtml">
         <ui:define name="content">
-       
-            <h:form>
+
+            <h:form id="formEditar">
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <p:outputLabel for="marca">Marca:</p:outputLabel>
                         <p:inputText id="marca" value="#{carroControllerBean.carro.marca}"/>
                     </div>
                 </div>
-            
+
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <p:outputLabel for="marca">Modelo:</p:outputLabel>
-                        <p:inputText id="marca" value="#{carroControllerBean.carro.modelo}"/>
+                        <p:outputLabel for="modelo">Modelo:</p:outputLabel>
+                        <p:inputText id="modelo" value="#{carroControllerBean.carro.modelo}"/>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <p:outputLabel for="marca">Ano:</p:outputLabel>
-                        <p:inputText id="marca" value="#{carroControllerBean.carro.ano}"/>
+                        <p:outputLabel for="ano">Ano:</p:outputLabel>
+                        <p:inputText id="ano" value="#{carroControllerBean.carro.ano}"/>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-6 form-group">
-                        <p:outputLabel for="marca">Preço:</p:outputLabel>
-                        <p:inputText id="marca" value="#{carroControllerBean.carro.precoAluguel}"/>
+                        <p:outputLabel for="preco">Preço:</p:outputLabel>
+                        <p:inputText id="preco" value="#{carroControllerBean.carro.precoAluguel}"/>
                     </div>
                 </div>
-                
-                <p:outputPanel>
-                    <p:commandLink action="#{carroControllerBean.alterarCarro()}" value="Salvar" />
-                    <p:commandLink action="#{carroControllerBean.reverterAlteracoes()}" value="Reverter Alterações" />
+
+                <p:outputPanel styleClass="row">
+                    <div class="col-md-3">
+                        <p:commandLink styleClass="btn btn-block btn-default" action="#{carroControllerBean.alterarCarro()}" value="Salvar" />
+                    </div>
+                    <div class="col-md-3">
+                        <p:commandLink styleClass="btn btn-block btn-default" action="#{carroControllerBean.reverterAlteracoes()}" value="Reverter Alterações" />
+                    </div>
                 </p:outputPanel>
-                
+
             </h:form>
-            
+
         </ui:define>
     </ui:decorate>
 </html>

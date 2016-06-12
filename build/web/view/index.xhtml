@@ -43,12 +43,12 @@
                                 #{carro.precoAluguel}
                             </p:column>
                             <p:column>
-                                <p:commandLink action="#{carroControllerBean.alterarCarro(carro)}">
+                                <p:commandLink action="#{carroControllerBean.redirecionarEditar(carro)}">
                                     Editar
                                 </p:commandLink>
                             </p:column>
                             <p:column>
-                                <p:commandLink actionListener="#{carroControllerBean.removerCarro(carro)}"> Excluir
+                                <p:commandLink actionListener="#{carroControllerBean.removerCarro(carro)}">Excluir
                                     <p:confirm header="Confirmação" message="Você tem certeza que deseja excluir esse registro?" icon="ui-icon-alert" />
                                 </p:commandLink>
                                 <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">

@@ -5,9 +5,13 @@
  */
 package br.edu.ifpe.recife.locavrum.controller;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -24,8 +28,12 @@ public class BasicBean implements Serializable {
     public BasicBean() {
     }
     
-    public String cancelar(){
-        return "index.xhtml";
+    public void cancelar(){
+        try {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/LocaVrum/view/index.xhtml");
+        } catch (IOException ex) {
+            Logger.getLogger(BasicBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
