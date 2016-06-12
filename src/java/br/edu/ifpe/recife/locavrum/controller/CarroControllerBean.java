@@ -8,6 +8,7 @@ package br.edu.ifpe.recife.locavrum.controller;
 import br.edu.ifpe.recife.locavrum.padroes.CarroMemento;
 import br.edu.ifpe.recife.locavrum.model.Carro;
 import br.edu.ifpe.recife.locavrum.padroes.RelatorioVendas;
+import com.mchange.v2.beans.BeansUtils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,7 @@ public class CarroControllerBean extends BasicBean {
 
     public void redirecionarEditar(Carro carroSelecionado){
         this.carro = carroSelecionado;
+        
         initAlterarCarro();
         
         try {
